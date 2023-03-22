@@ -8,15 +8,48 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define DEFAULT 0
+#define EXT     1
+#define SYM1    2
+#define GAME    3
+
 / {
     keymap {
         compatible = "zmk,keymap";
+
         default_layer {
             bindings = <
-                &kp Q    &kp W    &kp E    &kp R    &kp T                         &kp Y    &kp U    &kp I     &kp O    &kp P
-                &kp A    &kp S    &kp D    &kp F    &kp G                         &kp H    &kp J    &kp K     &kp L    &kp SEMI
-                &kp Z    &kp X    &kp C    &kp V    &kp B                         &kp N    &kp M    &kp COMMA &kp DOT  &kp FSLH
-                                           &kp ESC  &kp SPACE &kp TAB     &kp DEL &kp BSPC &kp RET
+                &kp Q    &kp W    &kp F    &kp P    &kp B                         &kp J    &kp L    &kp U     &kp Y    &kp APOS
+                &kp A    &kp R    &kp S    &kp T    &kp G                         &kp M    &kp N    &kp E     &kp I    &kp O
+                &kp Z    &kp X    &kp C    &kp D    &kp V                         &kp K    &kp H    &kp COMMA &kp DOT  &kp FSLH
+                              &tog GAME  &mo EXT  &kp SPC                         &kp SPC  &mo SYM1 &none
+            >;
+        };
+
+        ext_layer {
+            bindings = <
+                &none   &none    &none    &none    &none                       &none    &none    &none    &none    &none
+                &none   &none    &none    &none    &none                       &none    &none    &none    &none    &none
+                &none   &none    &none    &none    &none                       &none    &none    &none    &none    &none
+                                 &none    &none    &none                       &none    &none    &none
+            >;
+        };
+
+        sym1_layer {
+            bindings = <
+                &none   &none    &none    &none    &none                       &none    &none    &none    &none    &none
+                &none   &none    &none    &none    &none                       &none    &none    &none    &none    &none
+                &none   &none    &none    &none    &none                       &none    &none    &none    &none    &none
+                                 &none    &none    &none                       &none    &none    &none
+            >;
+        };
+
+        game_layer {
+            bindings = <
+                &kp ESC    &kp Q    &kp W    &kp E    &kp R                       &none    &none    &none    &none    &none
+                &kp LSFT   &kp A    &kp S    &kp D    &kp F                       &none    &none    &none    &none    &none
+                &kp LALT   &kp Z    &kp X    &kp C    &kp V                       &none    &none    &none    &none    &none
+                            &tog DEFAULT  &mo LCTL  &kp SPC                       &none    &none    &none
             >;
         };
     };
