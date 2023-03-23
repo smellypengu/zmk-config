@@ -16,14 +16,4 @@ if SHIELD_SWOOP_LEFT || SHIELD_SWOOP_RIGHT
 config ZMK_SPLIT
 	default y
 
-if ZMK_BACKLIGHT
-
-config PWM
-    default y
-
-config LED_PWM
-    default y
-
-endif # ZMK_BACKLIGHT
-
 endif
