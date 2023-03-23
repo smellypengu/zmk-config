@@ -16,4 +16,8 @@ if SHIELD_SWOOP_LEFT || SHIELD_SWOOP_RIGHT
 config ZMK_SPLIT
 	default y
 
+config ZMK_RGB_UNDERGLOW
+	select WS2812_STRIP
+	select SPI
+
 endif
