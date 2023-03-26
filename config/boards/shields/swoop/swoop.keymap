@@ -20,7 +20,7 @@
 
 / {
     combos {
-        compatible = "zmk,keymap";
+        compatible = "zmk,combos";
 
         // both right thumb keys
         combo_accent {
