@@ -1,1 +1,1 @@
-# A very wacky Swoop config that I have to finish
+A very wacky Swoop config that I have to finish
