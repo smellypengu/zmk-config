@@ -26,21 +26,21 @@
     combos {
         compatible = "zmk,combos";
 
-        // both right thumb keys
+        // Both right thumb keys
         combo_accent {
             timeout-ms = <300>;
             key-positions = <32 33>;
             bindings = <&mo ACC>;
         };
 
-        // internal-left & external-right thumb keys
+        // Internal-left & external-right thumb keys
         combo_sym2 {
             timeout-ms = <200>;
             key-positions = <31 33>;
             bindings = <&mo SYM2>;
         };
 
-        // both left thumb keys
+        // Both left thumb keys
         combo_settings {
             timeout-ms = <300>;
             key-positions = <31 32>;
@@ -51,82 +51,83 @@
     keymap {
         compatible = "zmk,keymap";
 
-        // Base alpha layer
+        // Base alpha layer (COLEMAK-DH)
         default_layer {
             bindings = <
-                &kp Q    &kp W    &kp F    &kp P         &kp B                         &kp J    &kp L    &kp U     &kp Y    &kp APOS
-                &kp A    &kp R    &kp S    &kp T         &kp G                         &kp M    &kp N    &kp E     &kp I    &kp O
-                &kp Z    &kp X    &kp C    &kp D         &kp V                         &kp K    &kp H    &kp COMMA &kp DOT  &kp FSLH
-                              &tog GAME  &mo EXT  &mt LSFT SPC                         &kp SPC  &sl SYM1 &trans
+                &kp Q    &kp W    &kp F      &kp P    &kp B                                &kp J    &kp L     &kp U      &kp Y    &kp APOS
+                &kp A    &kp R    &kp S      &kp T    &kp G                                &kp M    &kp N     &kp E      &kp I    &kp O
+                &kp Z    &kp X    &kp C      &kp D    &kp V                                &kp K    &kp H     &kp COMMA  &kp DOT  &kp FSLH
+                                  &tog GAME  &mo EXT  &mt LSHFT SPC                        &kp SPC  &sl SYM1  &trans
             >;
         };
 
         // Main modifiers and arrow keys
         ext_layer {
             bindings = <
-                &kp ESC     &trans       &trans      &trans          &trans                       &kp PG_UP        &kp HOME     &kp UP      &kp END     &kp CAPS
-                &sk LALT    &sk LGUI     &sk LSFT    &sk LCTRL     &kp RALT                       &kp PG_DN        &kp LEFT     &kp DOWN    &kp RIGHT   &kp DEL
-                &kp LC(Z)   &kp LC(X)    &kp LC(C)   &kp TAB      &kp LC(V)                       &kp LC(BSPC)     &kp BSPC     &trans      &trans      &trans
-                                                 &trans    &trans    &trans                       &kp ENTER        &mo FNC      &mo FNC
+                &kp ESC    &trans     &trans     &trans     &trans                       &kp PG_UP     &kp HOME  &kp UP    &kp END    &kp CAPS
+                &sk LALT   &sk LGUI   &sk LSHFT  &sk LCTRL  &kp RALT                     &kp PG_DN     &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL
+                &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp TAB    &kp LC(V)                    &kp LC(BSPC)  &kp BSPC  &trans    &trans     &trans
+                                      &trans     &trans     &trans                       &kp ENTER     &mo FNC   &mo FNC
             >;
         };
 
         // Numbers and high frequency symbols
         sym1_layer {
             bindings = <
-                &kp N1   &kp N2       &kp N3      &kp N4            &kp N5                      &kp N6          &kp N7       &kp N8     &kp N9          &kp N0
-                &kp LT   &kp PRCNT    &kp LPAR    &kp LBRC    &kp RA(LBKT)                      &kp KP_EQUAL    &kp QMARK    &kp SQT    &kp PLUS        &kp STAR
-                &kp GT   &kp DLLR     &kp RPAR    &kp RBRC    &kp RA(RBKT)                      &kp AT          &kp EXCL     &kp DQT    &kp KP_MINUS    &kp FSLH
-                                             &trans    &mo FNC    &mo SYM2                      &trans          &trans       &trans
+                &kp N1  &kp N2     &kp N3    &kp N4    &kp N5                      &kp N6        &kp N7     &kp N8   &kp N9        &kp N0
+                &kp LT  &kp PRCNT  &kp LPAR  &kp LBRC  &kp RA(LBKT)                &kp KP_EQUAL  &kp QMARK  &kp SQT  &kp PLUS      &kp STAR
+                &kp GT  &kp DLLR   &kp RPAR  &kp RBRC  &kp RA(RBKT)                &kp AT        &kp EXCL   &kp DQT  &kp KP_MINUS  &kp FSLH
+                                   &trans    &mo FNC   &mo SYM2                    &trans        &trans     &trans
             >;
         };
 
         // Low frequency symbols
         sym2_layer {
             bindings = <
-                &trans   &trans    &trans    &trans    &trans                       &trans    &trans    &trans    &trans    &trans
-                &trans   &trans    &trans    &trans    &trans                       &trans    &trans    &trans    &trans    &trans
-                &trans   &trans    &trans    &trans    &trans                       &trans    &trans    &trans    &trans    &trans
-                                   &trans    &trans    &trans                       &trans    &trans    &trans
+                &trans  &trans  &trans  &trans  &trans                       &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans                       &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans                       &trans  &trans  &trans  &trans  &trans
+                                &trans  &trans  &trans                       &trans  &trans  &trans
             >;
         };
 
         // Function keys with modifiers
         fnc_layer {
             bindings = <
-                &kp F1   &kp F2    &kp F3    &kp F4    &kp F5                       &kp F6    &kp F7    &kp F8    &kp F9    &kp F10
-                &trans   &trans    &trans    &trans    &trans                       &trans    &trans    &trans    &trans    &trans
-                &trans   &trans    &trans    &trans    &trans                       &trans    &trans    &trans    &trans    &trans
-                                   &trans    &trans    &trans                       &trans    &trans    &trans
+                &kp F1    &kp F2    &kp F3     &kp F4     &kp F5                       &kp F6   &kp F7   &kp F8           &kp F9  &kp F10
+                &sk LALT  &sk LGUI  &sk LSHFT  &sk LCTRL  &kp RALT                     &kp F11  &kp F12  &kp PRINTSCREEN  &trans  &trans
+                &trans    &trans    &trans     &trans     &trans                       &trans   &trans   &trans           &trans  &trans
+                                    &trans     &trans     &trans                       &trans   &trans   &trans
             >;
         };
 
         // Used to type regional accents
         acc_layer {
             bindings = <
-                &trans   &trans    &trans    &trans    &trans                       &trans    &trans    &trans    &trans    &trans
-                &trans   &trans    &trans    &trans    &trans                       &trans    &trans    &trans    &trans    &trans
-                &trans   &trans    &trans    &trans    &trans                       &trans    &trans    &trans    &trans    &trans
-                                   &trans    &trans    &trans                       &trans    &trans    &trans
+                &trans  &trans  &trans  &trans  &trans                       &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans                       &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans                       &trans  &trans  &trans  &trans  &trans
+                                &trans  &trans  &trans                       &trans  &trans  &trans
             >;
         };
 
+        // Gaming (QWERTY)
         game_layer {
             bindings = <
-                &kp ESC    &kp Q    &kp W    &kp E    &kp R                       &trans    &trans    &trans    &trans    &trans
-                &kp LSFT   &kp A    &kp S    &kp D    &kp F                       &trans    &trans    &trans    &trans    &trans
-                &kp LALT   &kp Z    &kp X    &kp C    &kp V                       &trans    &trans    &trans    &trans    &trans
-                               &tog GAME  &kp LCTL  &kp SPC                       &trans    &trans    &trans
+                &kp ESC   &kp Q  &kp W      &kp E       &kp R                       &trans  &trans  &trans  &trans  &trans
+                &kp LSFT  &kp A  &kp S      &kp D       &kp F                       &trans  &trans  &trans  &trans  &trans
+                &kp LALT  &kp Z  &kp X      &kp C       &kp V                       &trans  &trans  &trans  &trans  &trans
+                                 &tog GAME  &kp LCTL    &kp SPC                     &trans  &trans  &trans
             >;
         };
 
         // Used to change the keyboard's settings
         settings_layer {
             bindings = <
-                &bootloader    &trans    &trans    &bt BT_CLR    &bt BT_SEL 0                       &bt BT_SEL 3    &rgb_ug RGB_TOG   &rgb_ug RGB_EFF   &rgb_ug RGB_EFR    &bootloader
-                &trans         &trans    &trans    &trans        &bt BT_SEL 1                       &bt BT_SEL 4    &rgb_ug RGB_HUI   &rgb_ug RGB_SAI   &rgb_ug RGB_BRI    &rgb_ug RGB_SPI
-                &trans         &trans    &trans    &trans        &bt BT_SEL 2                       &bt BT_SEL 5    &rgb_ug RGB_HUD   &rgb_ug RGB_SAD   &rgb_ug RGB_BRD    &rgb_ug RGB_SPD
-                                                   &trans    &trans    &trans                       &trans    &trans    &trans
+                &bootloader  &trans  &trans  &bt BT_CLR  &bt BT_SEL 0                       &bt BT_SEL 3  &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &bootloader
+                &trans       &trans  &trans  &trans      &bt BT_SEL 1                       &bt BT_SEL 4  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_SPI
+                &trans       &trans  &trans  &trans      &bt BT_SEL 2                       &bt BT_SEL 5  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD
+                                     &trans  &trans      &trans                             &trans        &trans           &trans
             >;
         };
     };
