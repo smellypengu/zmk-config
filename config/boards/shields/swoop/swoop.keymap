@@ -9,9 +9,9 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/rgb.h>
 
-#include "/zmk-nodefree-config/helper.h"
-#include "/zmk-nodefree-config/keypos_def/keypos_36keys.h"
-#include "/zmk-nodefree-config/international_chars/swedish.dtsi"
+#include "../../../../zmk-nodefree-config/helper.h"
+#include "../../../../zmk-nodefree-config/keypos_def/keypos_36keys.h"
+#include "../../../../zmk-nodefree-config/international_chars/swedish.dtsi"
 
 #define ___ &trans
 
